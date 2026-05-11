@@ -26,7 +26,7 @@
  
     body { font-family: var(--font); background: var(--gray-bg); color: var(--text); font-size: 15px; line-height: 1.6; }
  
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       background: rgba(255,255,255,.97); backdrop-filter: blur(10px);
@@ -36,13 +36,15 @@
     }
     .logo { font-size: 20px; font-weight: 800; letter-spacing: -.02em; color: var(--navy); text-decoration: none; }
     .logo .blue { color: var(--blue); }
-    .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text); text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: var(--blue); }
-    .nav-li-icon a { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: var(--blue); border-radius: 6px; color: white; }
+    .nav-li-icon a { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: var(--blue); border-radius: 6px; color: white; transition: background .2s; }
     .nav-li-icon a:hover { background: var(--blue-l); }
+    .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 18px !important; border-radius: 8px !important; letter-spacing: .08em !important; transition: background .2s, transform .15s !important; }
+    .nav-cta:hover { background: var(--blue-l) !important; transform: translateY(-1px) !important; }
  
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       background: linear-gradient(140deg, #0f172a 0%, #192244 60%, #111827 100%);
       padding: 148px 56px 108px; position: relative; overflow: hidden;
@@ -54,46 +56,20 @@
       pointer-events: none;
     }
     .hero-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; animation: fadeUp .7s ease both; }
-    .hero-badge {
-      display: inline-block; background: rgba(59,91,219,.22);
-      border: 1px solid rgba(76,110,245,.38); color: #a5b4fc;
-      font-size: 11px; font-weight: 700; letter-spacing: .13em;
-      text-transform: uppercase; padding: 6px 14px; border-radius: 6px; margin-bottom: 24px;
-    }
+    .hero-badge { display: inline-block; background: rgba(59,91,219,.22); border: 1px solid rgba(76,110,245,.38); color: #a5b4fc; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; margin-bottom: 24px; }
     .hero h1 { font-size: clamp(40px, 5.5vw, 68px); font-weight: 800; color: #fff; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 20px; }
     .hero-sub { font-size: 18px; color: #94a3b8; max-width: 520px; line-height: 1.65; margin-bottom: 40px; font-weight: 400; }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
  
-    .btn-primary {
-      background: var(--blue); color: #fff; border: none;
-      padding: 13px 28px; border-radius: 10px; font-family: var(--font);
-      font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none;
-      transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 8px;
-    }
+    .btn-primary { background: var(--blue); color: #fff; border: none; padding: 13px 28px; border-radius: 10px; font-family: var(--font); font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-primary:hover { background: var(--blue-l); transform: translateY(-1px); }
-    .btn-secondary {
-      background: rgba(255,255,255,.08); color: #e2e8f0;
-      border: 1px solid rgba(255,255,255,.16); padding: 13px 28px;
-      border-radius: 10px; font-family: var(--font); font-size: 14px; font-weight: 700;
-      cursor: pointer; text-decoration: none; transition: background .2s;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
+    .btn-secondary { background: rgba(255,255,255,.08); color: #e2e8f0; border: 1px solid rgba(255,255,255,.16); padding: 13px 28px; border-radius: 10px; font-family: var(--font); font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; transition: background .2s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-secondary:hover { background: rgba(255,255,255,.14); }
  
-    /* METRICS */
-    .metrics-wrap { background: var(--gray-bg); padding-bottom: 0; }
-    .metrics-strip {
-      max-width: 1080px; margin: 0 auto; padding: 0 56px;
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
-      position: relative; z-index: 10;
-      transform: translateY(-52px);
-      animation: fadeUp .7s .15s ease both;
-    }
-    .metric-card {
-      background: var(--white); border-radius: 16px; padding: 28px 32px;
-      box-shadow: 0 4px 24px rgba(0,0,0,.08); border-bottom: 4px solid transparent;
-      transition: transform .22s, box-shadow .22s;
-    }
+    /* ── METRICS ── */
+    .metrics-wrap { background: var(--gray-bg); }
+    .metrics-strip { max-width: 1080px; margin: 0 auto; padding: 0 56px; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; transform: translateY(-52px); position: relative; z-index: 10; animation: fadeUp .7s .15s ease both; }
+    .metric-card { background: var(--white); border-radius: 16px; padding: 28px 32px; box-shadow: 0 4px 24px rgba(0,0,0,.08); border-bottom: 4px solid transparent; transition: transform .22s, box-shadow .22s; }
     .metric-card:hover { transform: translateY(-4px); box-shadow: 0 10px 36px rgba(0,0,0,.13); }
     .metric-card.c-green  { border-color: #37b24d; }
     .metric-card.c-blue   { border-color: var(--blue-l); }
@@ -104,14 +80,14 @@
     .c-green2 .metric-val { color: var(--green); }
     .metric-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
  
-    /* MAIN */
+    /* ── MAIN ── */
     .main { max-width: 1080px; margin: 0 auto; padding: 80px 56px 100px; }
     section { margin-bottom: 80px; }
     .section-title { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
     .section-title::before { content: ''; width: 32px; height: 4px; background: var(--blue); border-radius: 2px; flex-shrink: 0; }
     .section-title h2 { font-size: 28px; font-weight: 800; letter-spacing: -.02em; color: var(--text); }
  
-    /* TIMELINE */
+    /* ── TIMELINE ── */
     .timeline { display: flex; flex-direction: column; }
     .tl-item { display: grid; grid-template-columns: 28px 1fr; gap: 0 20px; padding-bottom: 52px; }
     .tl-item:last-child { padding-bottom: 0; }
@@ -129,14 +105,12 @@
     .tl-bullets li { font-size: 14px; color: #495057; display: flex; gap: 10px; align-items: flex-start; line-height: 1.6; }
     .check-icon { width: 18px; height: 18px; background: var(--blue); border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
     .tl-text { font-size: 14px; color: #495057; font-style: italic; line-height: 1.65; }
- 
-    /* Trayectoria box */
     .traj-box { background: var(--gray-lt); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
     .traj-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
     .traj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .traj-item { background: var(--white); border-left: 3px solid var(--border); border-radius: 0 6px 6px 0; padding: 10px 14px; font-size: 13px; color: var(--text); }
  
-    /* SKILLS dark */
+    /* ── SKILLS ── */
     .skills-section { background: var(--navy); padding: 80px 56px; }
     .skills-inner { max-width: 1080px; margin: 0 auto; }
     .skills-section h2 { font-size: 30px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 56px; letter-spacing: -.02em; }
@@ -148,7 +122,7 @@
     .skill-tag:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.22); transform: translateY(-1px); }
     .skill-tag.active { background: var(--blue); border-color: var(--blue); color: #fff; }
  
-    /* FORMACIÓN + CERTS */
+    /* ── FORMACIÓN + CERTS ── */
     .form-certs-wrap { background: var(--gray-bg); padding: 80px 56px; }
     .form-certs-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
     .fc-title { font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 28px; letter-spacing: -.02em; }
@@ -160,33 +134,94 @@
     .cert-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text); }
     .cert-star { width: 20px; height: 20px; flex-shrink: 0; }
  
-    /* CONTACTO */
-    .contact-section { background: var(--navy); padding: 80px 56px; }
-    .contact-inner { max-width: 1080px; margin: 0 auto; }
-    .contact-section h2 { font-size: 30px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 12px; letter-spacing: -.02em; }
-    .contact-sub { text-align: center; color: #94a3b8; font-size: 15px; margin-bottom: 48px; }
-    .contact-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; max-width: 680px; margin: 0 auto; }
-    .contact-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 22px 24px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #e2e8f0; transition: background .2s, border-color .2s, transform .2s; }
-    .contact-card:hover { background: rgba(59,91,219,.22); border-color: var(--blue); transform: translateY(-2px); }
-    .contact-card.full { grid-column: 1/-1; }
-    .contact-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(59,91,219,.28); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .contact-icon svg { width: 18px; height: 18px; stroke: var(--blue-l); }
-    .contact-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #64748b; margin-bottom: 3px; }
-    .contact-value { font-size: 14px; font-weight: 600; color: #e2e8f0; }
-    .contact-card:hover .contact-value { color: #fff; }
- 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer { background: #080d1a; border-top: 1px solid rgba(255,255,255,.06); padding: 32px 56px; text-align: center; }
     .footer-name { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #475569; margin-bottom: 8px; }
     .footer-copy { font-size: 12px; color: #334155; }
  
-    /* ANIMATIONS */
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(10,15,30,.75);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+ 
+    .modal-box {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px;
+      width: 100%; max-width: 460px;
+      position: relative;
+      transform: translateY(20px) scale(.97);
+      transition: transform .25s;
+      box-shadow: 0 32px 80px rgba(0,0,0,.3);
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
+ 
+    .modal-close {
+      position: absolute; top: 14px; right: 14px;
+      background: #f1f3f5; border: none; border-radius: 8px;
+      width: 30px; height: 30px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: #868e96; transition: background .2s, color .2s;
+    }
+    .modal-close:hover { background: #e9ecef; color: var(--text); }
+ 
+    .modal-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .modal-avatar { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #3b5bdb, #6c8cff); color: white; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .modal-name { font-size: 16px; font-weight: 800; color: var(--text); line-height: 1.2; }
+    .modal-tagline { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .modal-divider { height: 1px; background: #f1f3f5; margin-bottom: 20px; }
+ 
+    .modal-section-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #adb5bd; margin-bottom: 8px; }
+    .modal-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+    .modal-group.row { flex-direction: row; gap: 8px; }
+    .modal-group.row .mopt { flex: 1; }
+    .modal-group:last-child { margin-bottom: 0; }
+ 
+    .mopt {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 14px; border-radius: 12px;
+      border: 1.5px solid #e9ecef; background: #f8f9fa;
+      cursor: pointer; font-family: var(--font);
+      transition: border-color .18s, background .18s, transform .15s;
+      text-align: left; width: 100%;
+    }
+    .mopt:hover { background: #fff; transform: translateX(3px); }
+    .mopt-icloud:hover  { border-color: #555; }
+    .mopt-gmail:hover   { border-color: #ea4335; }
+    .mopt-default:hover { border-color: var(--blue); }
+    .mopt-call:hover    { border-color: #2f9e44; }
+    .mopt-wa:hover      { border-color: #25d366; }
+    .mopt-li:hover      { border-color: #0a66c2; }
+ 
+    .mopt-icon { width: 34px; height: 34px; border-radius: 9px; background: white; border: 1px solid #e9ecef; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .mopt-icloud  .mopt-icon svg { color: #444; }
+    .mopt-gmail   .mopt-icon svg { color: #ea4335; }
+    .mopt-default .mopt-icon svg { color: var(--blue); }
+    .mopt-call    .mopt-icon svg { color: #2f9e44; }
+    .mopt-wa      .mopt-icon svg { color: #25d366; }
+    .mopt-li      .mopt-icon svg { color: #0a66c2; }
+ 
+    .mopt-text { flex: 1; }
+    .mopt-name { display: block; font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.2; }
+    .mopt-desc { display: block; font-size: 11px; color: var(--muted); margin-top: 1px; }
+    .mopt-arrow { color: #ced4da; flex-shrink: 0; transition: color .18s, transform .18s; }
+    .mopt:hover .mopt-arrow { color: var(--muted); transform: translateX(2px); }
+ 
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
  
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
-      .nav-links li:not(.nav-li-icon) { display: none; }
+      .nav-links li:not(.nav-li-icon):not(:last-child) { display: none; }
       .hero { padding: 110px 24px 80px; }
       .metrics-strip { grid-template-columns: 1fr; padding: 0 24px; }
       .main { padding: 48px 24px 80px; }
@@ -197,19 +232,19 @@
       .form-certs-inner { grid-template-columns: 1fr; gap: 40px; }
       .traj-grid { grid-template-columns: 1fr; }
       footer { padding: 40px 24px; }
+      .modal-group.row { flex-direction: column; }
     }
   </style>
 </head>
 <body>
  
-<!-- NAVBAR -->
+<!-- ── NAVBAR ── -->
 <nav>
   <a href="#" class="logo"><span class="blue">PZ</span>C.</a>
   <ul class="nav-links">
     <li><a href="#experiencia">Experiencia</a></li>
     <li><a href="#habilidades">Habilidades</a></li>
     <li><a href="#formacion">Formación</a></li>
-    <li><a href="#contacto">Contacto</a></li>
     <li class="nav-li-icon">
       <a href="https://www.linkedin.com/in/pariszaratecolin/" target="_blank" aria-label="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
@@ -217,20 +252,21 @@
         </svg>
       </a>
     </li>
+    <li><a href="#" class="nav-cta" onclick="event.preventDefault(); openModal()">Contacto</a></li>
   </ul>
 </nav>
  
-<!-- HERO -->
+<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge">Digital Sales &amp; Growth Management</div>
     <h1>Paris Zárate Colín</h1>
     <p class="hero-sub">Líder estratégico especializado en gestión de proyectos de alto impacto, optimización y crecimiento comercial.</p>
     <div class="hero-btns">
-      <a href="mailto:paris.zarate@icloud.com" class="btn-primary">
+      <button class="btn-primary" onclick="openModal()">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         Contactar
-      </a>
+      </button>
       <a href="#experiencia" class="btn-secondary">
         Ver Trayectoria
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -239,36 +275,32 @@
   </div>
 </section>
  
-<!-- METRICS WRAP -->
+<!-- ── METRICS ── -->
 <div class="metrics-wrap">
   <div class="metrics-strip">
-  <div class="metric-card c-green">
-    <div class="metric-val">+14%</div>
-    <div class="metric-label">Conversión Digital</div>
+    <div class="metric-card c-green">
+      <div class="metric-val">+14%</div>
+      <div class="metric-label">Conversión Digital</div>
+    </div>
+    <div class="metric-card c-blue">
+      <div class="metric-val">$1.1M USD</div>
+      <div class="metric-label">Presupuestos Administrados</div>
+    </div>
+    <div class="metric-card c-green2">
+      <div class="metric-val">100%</div>
+      <div class="metric-label">Cumplimiento Comercial</div>
+    </div>
   </div>
-  <div class="metric-card c-blue">
-    <div class="metric-val">$1.1M USD</div>
-    <div class="metric-label">Presupuestos Administrados</div>
-  </div>
-  <div class="metric-card c-green2">
-    <div class="metric-val">100%</div>
-    <div class="metric-label">Cumplimiento Comercial</div>
-  </div>
-</div>
 </div>
  
-<!-- MAIN -->
+<!-- ── MAIN ── -->
 <div class="main">
   <section id="experiencia">
     <div class="section-title"><h2>Experiencia Profesional</h2></div>
     <div class="timeline">
  
-      <!-- Banamex -->
       <div class="tl-item">
-        <div class="tl-dot-col">
-          <div class="tl-dot active"></div>
-          <div class="tl-line"></div>
-        </div>
+        <div class="tl-dot-col"><div class="tl-dot active"></div><div class="tl-line"></div></div>
         <div class="tl-content">
           <div class="tl-header">
             <div class="tl-title">AVP Digital Sales &amp; Growth Sales Manager</div>
@@ -277,67 +309,43 @@
           <div class="tl-org">Banamex</div>
           <div class="tl-body">
             <ul class="tl-bullets">
-              <li>
-                <div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <span>Optimización E2E del funnel de ventas en canales Mobile y Bancanet, logrando un <strong>incremento del 14% anual</strong> en conversión de seguros (2024).</span>
-              </li>
-              <li>
-                <div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <span>Diseño de innovaciones digitales que mejoraron la eficiencia operativa y experiencia de usuario.</span>
-              </li>
-              <li>
-                <div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <span>Liderazgo de equipos transversales (Riesgo, Cumplimiento, IT) para ejecución de campañas al 100%.</span>
-              </li>
+              <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Optimización E2E del funnel de ventas en canales Mobile y Bancanet, logrando un <strong>incremento del 14% anual</strong> en conversión de seguros (2024).</span></li>
+              <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Diseño de innovaciones digitales que mejoraron la eficiencia operativa y experiencia de usuario.</span></li>
+              <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Liderazgo de equipos transversales (Riesgo, Cumplimiento, IT) para ejecución de campañas al 100%.</span></li>
             </ul>
           </div>
         </div>
       </div>
  
-      <!-- Fundación Moisés -->
       <div class="tl-item">
-        <div class="tl-dot-col">
-          <div class="tl-dot past"></div>
-          <div class="tl-line"></div>
-        </div>
+        <div class="tl-dot-col"><div class="tl-dot past"></div><div class="tl-line"></div></div>
         <div class="tl-content">
           <div class="tl-header">
             <div class="tl-title">Gerente de Programas de Desarrollo</div>
             <div class="tl-period">May 2022 – Sep 2022</div>
           </div>
           <div class="tl-org">Fundación Moisés Itzkowich</div>
-          <div class="tl-body">
-            <p class="tl-text">Incremento de la capacidad instalada institucional en un 30% trimestral mediante diagnósticos, consultoría y uso de metodologías ágiles.</p>
-          </div>
+          <div class="tl-body"><p class="tl-text">Incremento de la capacidad instalada institucional en un 30% trimestral mediante diagnósticos, consultoría y uso de metodologías ágiles.</p></div>
         </div>
       </div>
  
-      <!-- ORT -->
       <div class="tl-item">
-        <div class="tl-dot-col">
-          <div class="tl-dot past"></div>
-          <div class="tl-line"></div>
-        </div>
+        <div class="tl-dot-col"><div class="tl-dot past"></div><div class="tl-line"></div></div>
         <div class="tl-content">
           <div class="tl-header">
             <div class="tl-title">Gerente de Programas y Proyectos Especiales</div>
             <div class="tl-period">Ago 2021 – May 2022</div>
           </div>
           <div class="tl-org">Organización ORT de México</div>
-          <div class="tl-body">
-            <p class="tl-text">Gestión de portafolio de $1.1 millones de USD y cumplimiento normativo internacional (GAFI).</p>
-          </div>
+          <div class="tl-body"><p class="tl-text">Gestión de portafolio de $1.1 millones de USD y cumplimiento normativo internacional (GAFI).</p></div>
         </div>
       </div>
  
-      <!-- Trayectoria consolidada -->
       <div class="tl-item">
-        <div class="tl-dot-col">
-          <div class="tl-dot past"></div>
-        </div>
+        <div class="tl-dot-col"><div class="tl-dot past"></div></div>
         <div class="tl-content">
           <div class="traj-box">
-            <div class="traj-label">Trayectoria Consolidada (2008 - 2020)</div>
+            <div class="traj-label">Trayectoria Consolidada (2008 – 2020)</div>
             <div class="traj-grid">
               <div class="traj-item"><strong>ONCA</strong> — Fundador &amp; Director Operaciones</div>
               <div class="traj-item"><strong>Cauce Ciudadano</strong> — Promotor de Políticas Públicas</div>
@@ -352,193 +360,199 @@
   </section>
 </div>
  
-<!-- SKILLS DARK -->
+<!-- ── SKILLS ── -->
 <div class="skills-section" id="habilidades">
   <div class="skills-inner">
     <h2>Especialización Técnica y Transversal</h2>
     <div class="skills-grid">
- 
       <div>
-        <div class="skill-group-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          Ventas &amp; Growth
-        </div>
+        <div class="skill-group-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Ventas &amp; Growth</div>
         <div class="skill-tags">
-          <span class="skill-tag">Digital Sales Strategy</span>
-          <span class="skill-tag">Funnel Optimization</span>
-          <span class="skill-tag">Growth Hacking and Positive Impact to OKR/KPI's</span>
-          <span class="skill-tag">Customer Journey</span>
+          <span class="skill-tag">Digital Sales Strategy</span><span class="skill-tag">Funnel Optimization</span><span class="skill-tag">Growth Hacking · OKR/KPI</span><span class="skill-tag">Customer Journey</span>
         </div>
       </div>
- 
       <div>
-        <div class="skill-group-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-          Project Management
-        </div>
+        <div class="skill-group-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Project Management</div>
         <div class="skill-tags">
-          <span class="skill-tag">Metodologías Ágiles</span>
-          <span class="skill-tag">PMP</span>
-          <span class="skill-tag">Gestión de Riesgos (AML)</span>
-          <span class="skill-tag">Stakeholder Management</span>
+          <span class="skill-tag">Metodologías Ágiles</span><span class="skill-tag">PMP</span><span class="skill-tag">Gestión de Riesgos (AML)</span><span class="skill-tag">Stakeholder Management</span>
         </div>
       </div>
- 
       <div>
-        <div class="skill-group-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-          Análisis &amp; Tech
-        </div>
+        <div class="skill-group-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>Análisis &amp; Tech</div>
         <div class="skill-tags">
-          <span class="skill-tag">Big Data Analysis</span>
-          <span class="skill-tag">Digital Analytics</span>
-          <span class="skill-tag">Data-Driven Decisions</span>
+          <span class="skill-tag">Big Data Analysis</span><span class="skill-tag">Digital Analytics</span><span class="skill-tag">Data-Driven Decisions</span>
         </div>
       </div>
- 
       <div>
-        <div class="skill-group-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Liderazgo
-        </div>
+        <div class="skill-group-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Liderazgo</div>
         <div class="skill-tags">
-          <span class="skill-tag">Cross-Functional Leadership</span>
-          <span class="skill-tag">Planeación Estratégica</span>
-          <span class="skill-tag">Desarrollo Organizacional</span>
+          <span class="skill-tag">Cross-Functional Leadership</span><span class="skill-tag">Planeación Estratégica</span><span class="skill-tag">Desarrollo Organizacional</span>
         </div>
       </div>
- 
     </div>
   </div>
 </div>
  
-<!-- FORMACIÓN + CERTIFICACIONES -->
+<!-- ── FORMACIÓN + CERTIFICACIONES ── -->
 <div class="form-certs-wrap" id="formacion">
   <div class="form-certs-inner">
- 
     <div>
       <div class="fc-title">Formación Académica</div>
       <div class="edu-list">
         <div class="edu-item">
           <div class="edu-degree">Lic. en Ciencias Políticas y Administración Pública</div>
-          <div class="edu-school">UNAM | 2005-2009</div>
+          <div class="edu-school">UNAM | 2005–2009</div>
         </div>
         <div class="edu-item">
           <div class="edu-degree">Lic. en Gestión Cultural (Coop. Internacional)</div>
-          <div class="edu-school">Univ. de Guadalajara | 2016-2020</div>
+          <div class="edu-school">Univ. de Guadalajara | 2016–2020</div>
         </div>
       </div>
     </div>
- 
     <div>
       <div class="fc-title">Certificaciones</div>
       <ul class="cert-list">
-        <li class="cert-item">
-          <svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>
-          Certificado de Preparación PMP
-        </li>
-        <li class="cert-item">
-          <svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>
-          Agile Methodology
-        </li>
-        <li class="cert-item">
-          <svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>
-          Business Analytics
-        </li>
-        <li class="cert-item">
-          <svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>
-          Gestión de Proyectos: Resolución de Problemas
-        </li>
-        <li class="cert-item">
-          <svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>
-          McKinsey Forward Program
-        </li>
+        <li class="cert-item"><svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>Certificado de Preparación PMP</li>
+        <li class="cert-item"><svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>Agile Methodology</li>
+        <li class="cert-item"><svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>Business Analytics</li>
+        <li class="cert-item"><svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>Gestión de Proyectos: Resolución de Problemas</li>
+        <li class="cert-item"><svg class="cert-star" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3b5bdb" opacity=".15"/><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#3b5bdb"/></svg>McKinsey Forward Program</li>
       </ul>
     </div>
- 
   </div>
 </div>
  
-<!-- CONTACTO -->
-<div class="contact-section" id="contacto">
-  <div class="contact-inner">
-    <h2>Contacto</h2>
-    <p class="contact-sub">Disponible para nuevas oportunidades y colaboraciones estratégicas.</p>
-    <div class="contact-grid">
- 
-      <!-- Teléfono -->
-      <a href="tel:+525580225559" class="contact-card">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="contact-label">Celular</div>
-          <div class="contact-value">55 8022 5559</div>
-        </div>
-      </a>
- 
-      <!-- Ubicación -->
-      <div class="contact-card">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </div>
-        <div>
-          <div class="contact-label">Ubicación</div>
-          <div class="contact-value">Benito Juárez, CDMX</div>
-        </div>
-      </div>
- 
-      <!-- Email Outlook -->
-      <a href="mailto:paris.zarate@icloud.com" class="contact-card">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <div>
-          <div class="contact-label">Outlook</div>
-          <div class="contact-value">paris.zarate@icloud.com</div>
-        </div>
-      </a>
- 
-      <!-- Email Gmail -->
-      <a href="mailto:paris.zarate@icloud.com" class="contact-card">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <div>
-          <div class="contact-label">Gmail</div>
-          <div class="contact-value">paris.zarate@icloud.com</div>
-        </div>
-      </a>
- 
-    </div>
-  </div>
-</div>
- 
-<!-- FOOTER -->
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-name">Paris Zárate Colín</div>
   <div class="footer-copy">© 2026 CV Digital</div>
 </footer>
  
+<!-- ══════════════════════════════════════
+     MODAL DE CONTACTO
+     Datos ensamblados en JS runtime —
+     no expuestos en el DOM estático
+════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+ 
+    <button class="modal-close" onclick="closeModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+ 
+    <!-- Encabezado -->
+    <div class="modal-header">
+      <div class="modal-avatar">PZ</div>
+      <div>
+        <div class="modal-name">Paris Zárate Colín</div>
+        <div class="modal-tagline">Digital Sales &amp; Growth · CDMX</div>
+      </div>
+    </div>
+    <div class="modal-divider"></div>
+ 
+    <!-- Correo -->
+    <p class="modal-section-label">Correo electrónico</p>
+    <div class="modal-group">
+      <button class="mopt mopt-icloud" id="btn-icloud">
+        <div class="mopt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/></svg></div>
+        <div class="mopt-text">
+          <span class="mopt-name">iCloud Mail</span>
+          <span class="mopt-desc">Abrir en Apple Mail / iCloud</span>
+        </div>
+        <svg class="mopt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+ 
+      <button class="mopt mopt-gmail" id="btn-gmail">
+        <div class="mopt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="mopt-text">
+          <span class="mopt-name">Gmail</span>
+          <span class="mopt-desc">Abrir en Gmail (navegador)</span>
+        </div>
+        <svg class="mopt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+ 
+      <button class="mopt mopt-default" id="btn-default">
+        <div class="mopt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round"/></svg></div>
+        <div class="mopt-text">
+          <span class="mopt-name">App predeterminada</span>
+          <span class="mopt-desc">Usar el cliente de correo del dispositivo</span>
+        </div>
+        <svg class="mopt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+ 
+    <!-- Teléfono -->
+    <p class="modal-section-label">Teléfono</p>
+    <div class="modal-group row">
+      <button class="mopt mopt-call" id="btn-call">
+        <div class="mopt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16z"/></svg></div>
+        <div class="mopt-text">
+          <span class="mopt-name">Llamar</span>
+          <span class="mopt-desc">Llamada directa</span>
+        </div>
+      </button>
+      <button class="mopt mopt-wa" id="btn-wa">
+        <div class="mopt-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="color:#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+        <div class="mopt-text">
+          <span class="mopt-name">WhatsApp</span>
+          <span class="mopt-desc">Enviar mensaje</span>
+        </div>
+      </button>
+    </div>
+ 
+    <!-- LinkedIn -->
+    <p class="modal-section-label">Red profesional</p>
+    <div class="modal-group">
+      <button class="mopt mopt-li" id="btn-li">
+        <div class="mopt-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="color:#0a66c2"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></div>
+        <div class="mopt-text">
+          <span class="mopt-name">LinkedIn</span>
+          <span class="mopt-desc">Ver perfil profesional completo</span>
+        </div>
+        <svg class="mopt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+ 
+  </div>
+</div>
+ 
 <script>
-  // Toggle activo en skill-tags (click para marcar/desmarcar)
-  document.querySelectorAll('.skill-tag').forEach(tag => {
-    tag.addEventListener('click', () => {
-      tag.classList.toggle('active');
-    });
-  });
+  /* ── Skill tags ── */
+  document.querySelectorAll('.skill-tag').forEach(t =>
+    t.addEventListener('click', () => t.classList.toggle('active'))
+  );
+ 
+  /* ── Datos ensamblados en runtime, no expuestos en DOM ── */
+  const _d = (() => {
+    const e  = 'paris.zarate' + String.fromCharCode(64) + 'icloud.com';
+    const ph = '52' + '5580' + '225559';
+    const li = 'https://www.linkedin.com/in/pariszaratecolin/';
+    return { e, ph, li };
+  })();
+ 
+  /* ── Modal ── */
+  function openModal() {
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modal')) closeModal();
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+ 
+  /* ── Acciones de cada botón ── */
+  document.getElementById('btn-icloud').onclick  = () => { location.href = 'mailto:' + _d.e; closeModal(); };
+  document.getElementById('btn-gmail').onclick   = () => { window.open('https://mail.google.com/mail/?view=cm&to=' + _d.e, '_blank'); closeModal(); };
+  document.getElementById('btn-default').onclick = () => { location.href = 'mailto:' + _d.e; closeModal(); };
+  document.getElementById('btn-call').onclick    = () => { location.href = 'tel:+' + _d.ph; closeModal(); };
+  document.getElementById('btn-wa').onclick      = () => { window.open('https://wa.me/' + _d.ph, '_blank'); closeModal(); };
+  document.getElementById('btn-li').onclick      = () => { window.open(_d.li, '_blank'); closeModal(); };
 </script>
  
 </body>
 </html>
+ 
